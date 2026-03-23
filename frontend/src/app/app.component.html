@@ -21,7 +21,8 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Contact ID</th>
+              <th>Name</th>
+              <th>Email</th>
               <th>Timestamp</th>
               <th>Status</th>
             </tr>
@@ -31,9 +32,10 @@
               <td>#{{ click.id }}</td>
               <td>
                 <div class="contact-pill">
-                  {{ click.contactId }}
+                  {{ click.name }}
                 </div>
               </td>
+              <td>{{ click.email }}</td>
               <td>{{ click.clickedAt | date:'medium' }}</td>
               <td><span class="status-shield">Captured</span></td>
             </tr>

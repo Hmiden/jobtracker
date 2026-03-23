@@ -7,7 +7,7 @@ import { Click } from '../models/click.model';
   providedIn: 'root'
 })
 export class TrackingService {
-  private apiUrl = 'http://localhost:8080/clicks';
+  private apiUrl = 'https://jobtracker-1-9wc7.onrender.com/clicks';
 
   constructor(private http: HttpClient) { }
 

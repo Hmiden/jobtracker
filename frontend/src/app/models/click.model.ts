@@ -1,5 +1,6 @@
 export interface Click {
   id: number;
-  contactId: number;
+  email: string;
+  name: string;
   clickedAt: string;
 }

@@ -16,6 +16,7 @@ public class Click {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int contactId;
+    private String email;
+    private String name;
     private LocalDateTime clickedAt;
 }

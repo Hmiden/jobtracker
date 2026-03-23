@@ -13,9 +13,10 @@ public class ClickService {
 
     private final ClickRepository repo;
 
-    public void saveClick(int contactId) {
+    public void saveClick(String email, String name) {
         Click click = new Click();
-        click.setContactId(contactId);
+        click.setEmail(email);
+        click.setName(name);
         click.setClickedAt(LocalDateTime.now());
         repo.save(click);
     }

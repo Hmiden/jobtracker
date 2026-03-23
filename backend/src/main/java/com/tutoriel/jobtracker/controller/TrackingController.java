@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200") // Allow Angular frontend
+@CrossOrigin(origins = "*") // Allow all origins (update with your frontend URL in production)
 public class TrackingController {
 
     private final ClickService clickService;
@@ -23,15 +23,12 @@ public class TrackingController {
 
     @GetMapping("/track")
     public void trackClick(
-            @RequestParam(value = "id", required = false) Integer id,
-            @RequestParam(value = "track_id", required = false) Integer trackId,
+            @RequestParam(value = "email", required = false, defaultValue = "unknown") String email,
+            @RequestParam(value = "name", required = false, defaultValue = "unknown") String name,
             HttpServletResponse response) throws IOException {
-        
-        // Use either 'id' or 'track_id'
-        int finalId = (trackId != null) ? trackId : (id != null ? id : 0);
 
-        // Save click in DB
-        clickService.saveClick(finalId);
+        // Save click with email and name
+        clickService.saveClick(email, name);
 
         // Redirect to CV
         response.sendRedirect("https://drive.google.com/file/d/1BpNf3XW3FBAuF_Ps4xlZvXAst1SF2VNo/view?usp=sharing");
