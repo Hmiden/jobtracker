@@ -30,8 +30,8 @@ public class TrackingController {
         // Save click with email and name
         clickService.saveClick(email, name);
 
-        // Redirect to CV
-        response.sendRedirect("https://drive.google.com/file/d/1BpNf3XW3FBAuF_Ps4xlZvXAst1SF2VNo/view?usp=sharing");
+        // Redirect to Portfolio
+        response.sendRedirect("https://salah-hmiden-portfolio-v4jb.vercel.app");
     }
 
     @GetMapping("/clicks")
